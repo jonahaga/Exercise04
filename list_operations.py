@@ -133,42 +133,64 @@ def custom_insert(input_list, index, value):
 
 def custom_remove(input_list, value):
     """custom_remove(input_list, value) imitates input_list.remove(value)"""
-
-    # vlen = custom_len(input_list)
-    # for i in range(vlen-1):
-    #     print type(i),i
-    #     if input_list[i] == value:
-    #         input_list[i] = []
-    
-    for i in range(custom_len(input_list)-1):
-        print i,input_list[i],value
+    for i in range(custom_len(input_list)):
         if input_list[i] == value:
             input_list[i:i+1] = []
-    return input_list
-
+            return input_list
 
 def custom_pop(input_list):
     """custom_pop(input_list) imitates input_list.pop()"""
-    pass
+    # get the last item from the list 
+    # then remove the last item
+    # then return the last item
+
+    popped = input_list[-1:]
+    input_list[-1:] = []
+    return popped[0]
+
 
 def custom_index(input_list, value):
     """custom_index(input_list, value) imitates input_list.index(value)"""
-    pass
+    # Return the index in the list of the first item whose value is x.
+
+    for i in range(custom_len(input_list)):
+        if input_list[i] == value:
+            return i
 
 def custom_count(input_list, value):
     """custom_count(input_list, value) imitates input_list.count(value)"""
-    pass
+    # Return the number of times x appears in the list
+
+    counter = 0
+
+    for i in range(custom_len(input_list)):
+        if input_list[i] == value:
+            counter += 1
+    return counter
 
 def custom_reverse(input_list):
     """custom_reverse(input_list) imitates input_list.reverse()"""
-    pass
+    # Pop last item off list as a string
+    # Add popped item to front of list
+    # Add new last item after new first item
+
+    for i in range(custom_len(input_list)+1):
+        popped = custom_pop(input_list)
+        custom_insert(input_list, i, popped)
+    return input_list
 
 def custom_contains(input_list, value):
     """custom_contains(input_list, value) imitates (value in input_list)"""
-    pass
+    if value in input_list:
+        return True
+    else:
+        return False
 
 def custom_equality(some_list, another_list):
     """custom_equality(some_list, another_list) imitates
     (some_list == another_list)
     """
-    pass
+    if some_list == another_list:
+        return True
+    else:
+        return False

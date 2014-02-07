@@ -169,7 +169,6 @@ class TestListOperations(unittest.TestCase):
                                        'Aug', 'Sep', 'Oct', 'Nov', 'Dec'])
         self.assertEqual(self.notes, ['Re', 'Mi', 'Fa', 'So', 'La', 'Ti', 'Do'])
         self.assertEqual(self.multiples, [0, 3, 6, 9, 12, 15, 18, 21, 24])
-"""
 
     def test_2_F_custom_pop(self):
         self.assertEqual(custom_pop(self.months), 'Dec')
@@ -226,6 +225,5 @@ class TestListOperations(unittest.TestCase):
         self.assertFalse(custom_equality(self.notes, self.notes[::-1]))
         self.assertFalse(custom_equality(self.multiples, [0, 3, 6, 9, 12, 15, 18,
                                                          21, 24]))
-"""
 if __name__ == '__main__':
     unittest.main()
