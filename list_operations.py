@@ -170,9 +170,7 @@ def custom_count(input_list, value):
 
 def custom_reverse(input_list):
     """custom_reverse(input_list) imitates input_list.reverse()"""
-    # Pop last item off list as a string
-    # Add popped item to front of list
-    # Add new last item after new first item
+    # Saved to pythontutor.com --> http://goo.gl/CFtvmK
 
     for i in range(custom_len(input_list)+1):
         popped = custom_pop(input_list)
