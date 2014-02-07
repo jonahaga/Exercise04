@@ -170,7 +170,7 @@ def custom_count(input_list, value):
 
 def custom_reverse(input_list):
     """custom_reverse(input_list) imitates input_list.reverse()"""
-    # Saved to pythontutor.com --> http://goo.gl/CFtvmK
+    # Saved to pythontutor.com --> http://goo.gl/8j1Wpg
 
     for i in range(custom_len(input_list)+1):
         popped = custom_pop(input_list)
