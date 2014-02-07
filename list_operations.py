@@ -108,10 +108,10 @@ the test_list_operations.py file for concrete examples of expected behavior.
 """
 
 def custom_len(input_list):
-    clen = 0
+    list_len = 0
     for i in input_list:
-        clen +=1
-    return clen
+        list_len += 1
+    return list_len
 
 # For the next four functions, get clever using slice operations described in the first half
 def custom_append(input_list, value):
@@ -122,10 +122,7 @@ def custom_append(input_list, value):
 
 def custom_extend(input_list, values):
     """custom_extend(input_list, values) imitates input_list.extend(values)"""
-    vlen = custom_len(values)
-    for i in range (vlen):
-        input_list[-1:-1] = [input_list[-1]]
-        input_list[-1] = values[i]
+    input_list[custom_len(input_list):] = values
     return input_list
 
 def custom_insert(input_list, index, value):
@@ -142,8 +139,7 @@ def custom_remove(input_list, value):
     #     print type(i),i
     #     if input_list[i] == value:
     #         input_list[i] = []
-    print "Debugging in custom_remove"
-    print custom_len(input_list)
+    
     for i in range(custom_len(input_list)-1):
         print i,input_list[i],value
         if input_list[i] == value:
