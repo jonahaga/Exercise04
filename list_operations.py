@@ -179,16 +179,17 @@ def custom_reverse(input_list):
 
 def custom_contains(input_list, value):
     """custom_contains(input_list, value) imitates (value in input_list)"""
-    if value in input_list:
-        return True
-    else:
-        return False
+    for i in input_list:
+        if i == value:
+            return True
 
 def custom_equality(some_list, another_list):
     """custom_equality(some_list, another_list) imitates
     (some_list == another_list)
     """
-    if some_list == another_list:
-        return True
-    else:
+    if len(some_list) != len(another_list):
         return False
+    for i in range(len(some_list)):
+        if some_list[i] != another_list[i]:
+            return False
+    return True
